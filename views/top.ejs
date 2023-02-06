@@ -11,8 +11,8 @@
 
     <link rel="stylesheet" href="/app.css">
 </head>
-<body >
-    <div class="container">
+<body class="bg-gradient bg-secondary" >
+    <div class="container bg-secondary bg-gradient">
         <h1 class='text-capitalize'>welcome to the list app</h1>
       
         <table class="table table-bordered table-primary">
@@ -24,22 +24,21 @@
                
             </thead>
             <tbody>
-              <% let id = 1;%>
-    
+              
               <% students.forEach((student)=>{%>
                 
               <tr>
-                <th scope="row"><%= id %></th>
+                <th scope="row"><%= student.id %></th>
                 <td><%=student.fname%></td>
-                <td><%=student.lname%></td>
-                
+                <td><%=student.lname%>  <a class="btn float-end btn-link" href=<%=`/edit/${ student.id }`%>>edit</a></td>
+               
               </tr>
-              <%  id++ ;%>
+            
               <%});%>
               
             </tbody>
           </table>
-          <a href="/new" class="btn float-end btn-link">add</a>
+          <a href="/new" class="btn float-end btn-info">add</a>
 
     </div>
     
