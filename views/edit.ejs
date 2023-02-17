@@ -10,8 +10,9 @@
 
 
 </head>
-<body>
-    <div class="container">
+<body class=" bg-secondary" >
+    <div class="container text-info">
+      <h1>Update student details below </h1>
         <form action= <%= `/edit/${data.id}` %> method='post'>
             <div class="form-group">
               <label for="fname">First-Name</label>
@@ -21,7 +22,7 @@
               
             </div>
             
-            <button type="submit" class="btn btn-primary">Update</button>
+            <button type="submit" class="btn btn-primary w-100" style="margin-top: 1%;">Update</button>
           </form>
 
     </div>

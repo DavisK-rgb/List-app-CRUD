@@ -30,7 +30,22 @@
               <tr>
                 <th scope="row"><%= student.id %></th>
                 <td><%=student.fname%></td>
-                <td><%=student.lname%>  <a class="btn float-end btn-link" href=<%=`/edit/${ student.id }`%>>edit</a></td>
+                <td>
+                  <%=student.lname%> 
+
+                  <div class="d-inline-block float-end" >
+                   
+                    <a class="btn btn-link" href=<%=`/edit/${ student.id }`%>>edit</a>
+                    <form  action= <%= `/delete/${student.id}` %> method='post'>
+                     
+                     <button type="submit" class="btn btn-danger ">Delete</button>
+ 
+                   </form>
+
+                  </div>
+                 
+        
+                </td>
                
               </tr>
             
@@ -38,7 +53,7 @@
               
             </tbody>
           </table>
-          <a href="/new" class="btn float-end btn-info">add</a>
+          <a href="/new" class="btn float-end btn-info w-100">add</a>
 
     </div>
     

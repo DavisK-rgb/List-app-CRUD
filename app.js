@@ -2,11 +2,17 @@ const express = require('express');
 const app = express();
 const mysql = require('mysql');
 require('dotenv').config();
+
+
 //setting view engine to ejs
 app.set('view engine','ejs');
+
+
 app.use(express.static('public'));
 app.use(express.json());
 app.use(express.urlencoded());
+
+
 //db connection
 const db = mysql.createConnection({
     host:process.env.HOST,
@@ -84,6 +90,18 @@ app.post('/edit/:id',(req,res)=>{
 });
 
 
+
+app.post('/delete/:id',(req,res)=>{
+    db.query('delete from `List-app`.students where id = ?',[req.params.id],(err,results)=>{
+        if(err) throw err;
+        res.redirect('/');
+
+    });
+
+
+
+
+});
 
 
 
